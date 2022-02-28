@@ -1,0 +1,6 @@
+<h1 mat-dialog-title align="center" >{{data.title}}</h1>
+<div mat-dialog-content [innerHTML]="data.message" align="center" class="pb-20">
+</div>
+<div mat-dialog-actions align="center">
+  <button mat-raised-button color="warn" (click)="close()" cdkFocusInitial>ตกลง</button>
+</div> 

@@ -1,0 +1,118 @@
+<div class="flex flex-col flex-auto">
+    <div class="bg-card">
+        <div class="flex flex-col w-full   ">
+            <div class="flex flex-col sm:flex-row flex-auto sm:items-center min-w-0 my-8 sm:my-12">
+                <!-- Avatar and name -->
+                <div class="flex flex-auto items-center min-w-0">
+
+                    <div class="flex flex-col min-w-0 ">
+
+                            <div class="text-7xl md:text-5xl font-semibold tracking-tight leading-7 md:leading-snug truncate ml-8"> สถิติรายได้</div>
+
+
+                    </div>
+                </div>
+                <!-- Actions -->
+
+            </div>
+
+        </div>
+      </div>
+    <div class="flex flex-col flex-auto min-w-0 bg-main">
+
+        <!-- Main -->
+        <div class="flex-auto p-6 sm:p-10">
+
+            <!-- CONTENT GOES HERE -->
+            <div class=" ">
+
+<div class="flex    flex-auto  justify-center">
+    <div class="flex    flex-auto pr-32 pl-32">
+
+
+
+        <div class="flex w-72">
+            <mat-form-field appearance="fill" class="w-full">
+                <mat-label class="kanit  font-black text-base">เดือน</mat-label>
+                <select matNativeControl>
+                    <option *ngFor="let item of monthList" value="{{item.id}}">{{item.month}}</option>
+
+                </select>
+            </mat-form-field>
+        </div>
+        <div class=" flex w-72 ml-5">
+            <mat-form-field appearance="fill" class="w-full">
+                <mat-label class="kanit  font-black text-base">ปี</mat-label>
+                <select matNativeControl>
+                    <option *ngFor="let item of yearList" value="{{item.id}}">{{item.year}}</option>
+                </select>
+            </mat-form-field>
+        </div>
+        <div class="flex flex-auto ml-5">
+            <div class="flex flex-auto">
+                <button type="button" mat-flat-button
+                    class=" rounded-3xl py-2 btn-main text-white kanit w-3/4 text-lg font-medium mt-7">ค้นหา</button>
+            </div>
+            <div class="flex flex-auto">
+                <button type="button" mat-flat-button
+                    class="bg-red-500 btnreset rounded-3xl  text-white kanit w-3/4 text-lg font-medium mt-7">รีเซต</button>
+
+            </div>
+
+
+        </div>
+
+
+</div>
+</div>
+
+
+
+                <div class=" flex flex-auto justify-center mt-5 ">
+                    <div class="rounded-2xl w-full">
+                        <p-table [value]="inComeList" class="w-full " >
+                            <ng-template pTemplate="header" >
+                                <tr  class="">
+                                    <th class="bg-purple-300 " pSortableColumn="date">วันที่ <p-sortIcon field="date"></p-sortIcon>
+                                    </th>
+                                    <th class="bg-purple-300" pSortableColumn="register">ลงทะเบียน <p-sortIcon field="register"></p-sortIcon>
+                                    </th>
+                                    <th  class="bg-purple-300" pSortableColumn="deposit">ฝากเงิน <p-sortIcon field="deposit"></p-sortIcon>
+                                    </th>
+                                    <th  class="bg-purple-300" pSortableColumn="fistdeposit">ฝากเงินครั้งแรก <p-sortIcon field="fistdeposit">
+                                        </p-sortIcon>
+                                    </th>
+                                    <th  class="bg-purple-300" pSortableColumn="buy">ยอดซื้อ <p-sortIcon field="buy"></p-sortIcon>
+                                    </th>
+                                    <th class="bg-purple-300"  pSortableColumn="profit">กำไร <p-sortIcon field="profit"></p-sortIcon>
+                                    </th>
+                                    <th  class="bg-purple-300 " pSortableColumn="income">รายได้ <p-sortIcon field="income"></p-sortIcon>
+                                    </th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-product>
+                                <tr>
+                                    <td>{{product.date}}</td>
+                                    <td>{{product.register}}</td>
+                                    <td>{{product.deposit}}</td>
+                                    <td>{{product.fistdeposit}}</td>
+                                    <td>{{product.buy | currency: '฿'}}</td>
+                                    <td>{{product.profit | currency: '฿'}}</td>
+                                    <td>{{product.income | currency: '฿'}}</td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                    </div>
+
+                </div>
+
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,64 @@
+<div class="flex flex-col flex-auto bg-white">
+    <div class="sm:w-3/12 sm:ml-16   md:w-1/12 md:ml-16  lg:w-2/12 lg:ml-16  xl:w-1/12 xl:ml-16 ">
+        <button (click)="back()" class="fuse-mat-button-rounded text-black mt-16  bg-purple-300 w-full  "
+            mat-flat-button>
+            <mat-icon class="icon-size-5" [svgIcon]="'heroicons_outline:arrow-sm-left'"></mat-icon>
+            <span class="ml-2">กลับ</span>
+        </button>
+
+    </div>
+
+    <div class="flex flex-col sm:flex-row h-screen items-center md:items-center sm:justify-center md:justify-center flex-auto min-w-0">
+
+        <div class="md:flex md:items-center md:justify-end w-full sm:w-auto md:h-full md:w-1/2 py-8 px-4 sm:p-12 sm:rounded-2xl
+        md:rounded-none sm:shadow md:shadow-none sm:bg-card ">
+            <div class=" w-100 max-w-full  md:w-100 sm:w-100 mx-auto my-auto sm:mx-0 ">
+              <div class="flex  justify-center mb-8">
+                  <img src="assets/image/11Logo.png" class="h-32 w-32" >
+              </div>
+
+
+              <div class="flex justify-center pt-8">
+            <h1 class="font-medium text-7xl kanit text-purple-600">สร้างรหัสผ่าน</h1>
+        </div>
+        <form name="loginForm" [formGroup]="passForm" novalidate class="mt-5">
+            <mat-form-field  class="w-full">
+                <mat-label class="kanit font-medium" >รหัสผ่าน</mat-label>
+                <input matInput [type]="hide1 ? 'password' : 'text'" formControlName="password1" maxlength="6" class="kanit font-medium text-base text-black pl-2.5">
+                <!-- <button mat-icon-button matSuffix (click)="hide1 = !hide1" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide1">
+                  <mat-icon>{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button> -->
+              </mat-form-field>
+              <mat-form-field  class="w-full" >
+                <mat-label class="kanit font-medium" >ยืนยันรหัสผ่าน</mat-label>
+                <input matInput [type]="hide2 ? 'password' : 'text'" formControlName="password2" maxlength="6" class="kanit font-medium text-base text-black pl-2.5">
+                <!-- <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide2" >
+                  <mat-icon >{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button> -->
+              </mat-form-field>
+
+
+          <button
+          (click)="passformSubmit()"
+          class="fuse-mat-button-large w-full mt-6 btn-main text-white kanit"
+          mat-flat-button>
+          <span >
+            ตกลง
+          </span>
+
+      </button>
+
+
+
+        </form>
+
+      </div>
+      </div>
+
+      <div class=" relative hidden md:flex md:w-1/2 md:h-full overflow-hidden dark:border-l bg-white aff">
+          <img src="../../../../assets/images/auth/Password_1@2x@2x.png" style="height: 100%;width: 100%;margin-top: 10%;" />
+      </div>
+
+      </div>
+    </div>
+

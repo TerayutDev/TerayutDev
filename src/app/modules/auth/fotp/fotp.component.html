@@ -1,0 +1,80 @@
+<div class="flex flex-col flex-auto bg-white">
+    <div class="sm:w-3/12 sm:ml-16   md:w-1/12 md:ml-16  lg:w-2/12 lg:ml-16  xl:w-1/12 xl:ml-16 ">
+        <button (click)="back()" class="fuse-mat-button-rounded text-black mt-16  bg-purple-300 w-full  "
+            mat-flat-button>
+            <mat-icon class="icon-size-5" [svgIcon]="'heroicons_outline:arrow-sm-left'"></mat-icon>
+            <span class="ml-2">กลับ</span>
+        </button>
+
+    </div>
+    <div
+        class="flex flex-col sm:flex-row h-screen items-center md:items-center sm:justify-center md:justify-center flex-auto min-w-0">
+
+        <div class="md:flex md:items-center md:justify-end w-full sm:w-auto md:h-full md:w-1/2 py-8 px-4 sm:p-12 sm:rounded-2xl
+        md:rounded-none sm:shadow md:shadow-none sm:bg-card ">
+            <div class=" w-100 max-w-full  md:w-100 mx-auto  sm:w-100  sm:mx-0 ">
+                <div class="flex  justify-center mb-8">
+                    <img src="assets/image/11Logo.png" class="h-32 w-32" >
+                </div>
+
+
+                <div class="flex justify-center pt-8">
+                    <h1 class="font-medium text-6xl kanit text-purple-600">รหัส OTP</h1>
+                </div>
+                <div class="flex justify-center">
+                    <p class="font-normal kanit text-xl mt-5 ">รหัสอ้างอิง : {{otp}}</p>
+                </div>
+                <form name="loginForm" [formGroup]="fotpForm" novalidate fxLayout="column" class="pt-5 w-full">
+                    <div class="flex flex-row justify-center">
+
+
+                        <input #otp1 formControlName="otp1" autocomplete="off" maxlength="1"
+                            class="text-xl font-normal kanit w-12 h-12 border-2 border-solid border-purple-600 text-center rounded "
+                            (keyup)="otpController($event,otp2,'')" />
+                        <input #otp2 formControlName="otp2" autocomplete="off" maxlength="1"
+                            class="text-xl font-normal kanit w-12 h-12 border-2 border-solid border-purple-600 text-center rounded ml-5"
+                            (keyup)="otpController($event,otp3,otp1)" />
+                        <input #otp3 formControlName="otp3" autocomplete="off" maxlength="1"
+                            class="text-xl font-normal kanit w-12 h-12 border-2 border-solid border-purple-600 text-center rounded ml-5"
+                            (keyup)="otpController($event,otp4,otp2)" />
+                        <input #otp4 formControlName="otp4" autocomplete="off" maxlength="1"
+                            class=" text-xl font-normal kanit w-12 h-12 border-2 border-solid border-purple-600 text-center rounded ml-5"
+                            (keyup)="otpController($event,otp5,otp3)" />
+                        <input #otp5 formControlName="otp5" autocomplete="off" maxlength="1"
+                            class="text-xl font-normal  kanit w-12 h-12 border-2 border-solid border-purple-600 text-center rounded ml-5"
+                            (keyup)="otpController($event,otp6,otp4)" />
+                        <input #otp6 formControlName="otp6" autocomplete="off" maxlength="1"
+                            class=" text-xl font-normal kanit w-12 h-12 border-2 border-solid border-purple-600 text-center rounded ml-5"
+                            (keyup)="otpController($event,'',otp5)" />
+
+                    </div>
+          <button
+          (click)="otpformSubmit()"
+          class="fuse-mat-button-large w-full mt-6 btn-main text-white kanit"
+          mat-flat-button>
+          <span >
+              ถัดไป
+          </span>
+
+      </button>
+
+                    <div class="flex justify-center mt-5">
+                        <button type="button" [disabled]="isDisabled" (click)="sendotp()"
+                            class="font-medium text-base kanit ">ขอ OTP อีกครั้ง</button>
+                        <label *ngIf="time1 != 0" class="pl-5"></label>
+                        <label class="font-medium kanit text-base text-red-500">{{label}}</label>
+                    </div>
+
+
+                </form>
+
+
+            </div>
+        </div>
+        <div class=" relative hidden md:flex md:w-1/2 md:h-full overflow-hidden dark:border-l bg-white aff">
+            <img src="../../../../assets/images/auth/New OTP@2x.png" style="height: 80%;width: 80%;margin-top: 10%;" />
+        </div>
+
+    </div>
+
+</div>
